@@ -1,0 +1,22 @@
+<div class="author">
+    <h1 class="author__heading">Hi, I am Amr.</h1>
+    <p class="author__body">Web Developer</p>
+</div>
+
+<section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+    <ul class="article-ul">
+        <% posts.forEach(element => { %>
+            <li>
+                <a href="posts/<%= element._id %>">
+                    <span><%=   element.title %></span>
+                    <span class="article-list__date"><%= element.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+
+    </ul>
+    <% if (nextPage) { %>
+        <a href="?page=<%= nextPage %>" class="pagination">&lt;View Older Posts </a>
+    <% } %>
+</section>

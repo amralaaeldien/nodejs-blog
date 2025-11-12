@@ -1,0 +1,9 @@
+ <h1>Search Results</h1>
+<% result.forEach(element => { %>
+<li>
+    <a href="posts/<%= element._id %>">
+        <span><%=   element.title %></span>
+        <span class="article-list__date"><%= element.createdAt.toDateString() %></span>
+    </a>
+</li>
+<% }) %>

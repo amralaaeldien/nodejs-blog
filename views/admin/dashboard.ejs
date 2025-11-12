@@ -1,0 +1,15 @@
+<h2>Posts</h2>
+<a href="/add-post">+ Add new</a>
+
+<ul>
+    <% data.forEach(element => { %>
+        <li>
+            <a href="/posts/<%= element._id %>"><%= element.title %></a>
+            <a href="/edit-post/<%= element._id %>">edit-post</a>
+            <form action="/delete-post/<%= element._id %>" method="post">
+                <input type="submit" value="Delete">
+            </form>
+
+        </li>
+    <% }) %>
+</ul>
